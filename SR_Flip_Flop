@@ -1,0 +1,19 @@
+//VHDL Digital JK - Flip Flop Program 
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+ entity SRFF1 is
+    Port ( S : in std_logic;
+           R : in std_logic;
+           Q : inout std_logic;
+           QN : inout std_logic);
+end SRFF1;
+architecture Behavioral of SRFF1 is
+begin
+            process (S,R,Q,QN)
+            begin
+                        Q <= R NOR QN;
+                        QN <= S NOR Q;
+            end process;
+end Behavioral;
